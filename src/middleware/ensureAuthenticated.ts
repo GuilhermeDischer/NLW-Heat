@@ -21,7 +21,7 @@ export function ensureAuthenticated(req: Request, res: Response, next: NextFunct
 
         req.user_id = sub;
 
-        return next;
+        return next();
     } catch (err) {
         res.status(401).json({
             errorCode: "token.expired"
